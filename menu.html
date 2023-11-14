@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Linking the CSS page -->
+    <link rel="stylesheet" href="./CSS/style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <!-- Slider(box icons) -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- Owl Carousel -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+
+    <!-- Light Gallery style -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/css/lightgallery.min.css" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Page</title>
+    <style>
+        body {
+            background-image: url('/Images/menu.avif');
+            /* Replace 'path/to/your/image.jpg' with the actual path to your image file */
+            background-size: cover;
+            /* This property ensures that the background image covers the entire body */
+            background-repeat: no-repeat;
+            /* This property prevents the background image from repeating */
+            /* You can also add more styles here as needed */
+        }
+
+        main {
+            flex: 1;
+            overflow-y: auto;
+
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="modal-overlay"></div>
+    <section>
+        <div class="menu" style="display: flex;">
+            <div class="logo" style="margin-top: 25px;">    
+                <img src="Images/canteen logo.svg" width="300" height="110" alt="SDC">        
+            </div>
+            <div class="contents" style="margin-left: 400px;">
+                <h1>Pick Your Item</h1>
+                <h3>-----From Our Menu-----</h3>
+            </div>
+        </div>
+
+
+    </section>
+    <!-- New section for pictures with flexbox layout -->
+    <section class="image-section" id="horizontal-scroll-container">
+        <div class="image-container" data-message="Enjoy our refreshing Juices!"
+            onclick="showItemList('Juices', ['Lime Juice:---------- \u20B9 26', 'Cold Coffee:--------- \u20B9 42', 'Water Melon:-------- \u20B9 47', 'Pineapple:------------ \u20B9 47', 'Musumbi:------------ \u20B9 47', 'Orange Juice:-------- \u20B9 47', 'Fruit Punch:--------- \u20B9 60'])">
+            <img src="Images/juices.jpg" alt="Image 1">
+            <p class="image-caption">Juices</p>
+        </div>
+
+        <div class="image-container" data-message="Delicious Milkshakes"
+            onclick="showItemList('MilkShakes', ['Oreo:---------------- \u20B9 53', 'Chocolate:---------- \u20B9 53', 'Chikku:------------- \u20B9 53', 'Musk Melon:------- \u20B9 53', 'Pista:----------------- \u20B9 53', 'Strawberry:--------- \u20B9 53', 'Mango:-------------- \u20B9 53', 'Vanilla:-------------- \u20B9 53'])">
+            <img src="Images/milkshakes.jpg" alt="Image 2">
+            <p class="image-caption">MilkShakes</p>
+        </div>
+
+        <div class="image-container" data-message="Tasty Chats" data-item-list="Pani Puri,Bhel Puri,Sev Puri"
+            onclick="showItemList('Chats', ['Vada Paav:------------ \u20B9 20', 'Sev Puri:-------------- \u20B9 37', 'Papdi Chat:----------- \u20B9 37', 'Bhel Puri:------------- \u20B9 37', 'Charmuri:------------- \u20B9 37', 'PaniPuri:-------------- \u20B9 37', 'Masala Puri:---------- \u20B9 42', 'Samosa Chat:--------- \u20B9 42', 'Misaal Paav:---------- \u20B9 42', 'Dahi Puri:------------- \u20B9 47', 'Dahi Sev Puri:-------- \u20B9 47', 'Dahi Papdi Chat:----- \u20B9 47'])">
+            <img src="Images/chats.jpg" alt="Image 3">
+            <p class="image-caption">Chats</p>
+        </div>
+        <div class="image-container" data-message="Creamy Ice Creams"
+            onclick="showItemList('Ice-Creams', ['Vanilla Sunday:-------- \u20B9 55', 'Fruit Salad:------------- \u20B9 55', 'Chocolate Sunday:---- \u20B9 60', 'Mix Sunday:----------- \u20B9 60', 'Fruit Salad with Ice:-- \u20B9 65', 'Gudbud:---------------- \u20B9 75'])">
+            <img src="Images/ice-creams.jpg" alt="Image 4">
+            <p class="image-caption">Ice-Creams</p>
+        </div>
+        <div class="image-container" data-message="Delightful Chinese" data-item-list="Manchurian,Fried Rice,Noodles"
+            onclick="showItemList('Chinese', ['Veg Fried Rice:----------- \u20B9 63', 'Veg Noodles:-------------- \u20B9 63', 'Paneer Fried Rice:-------- \u20B9 74', 'Ghee Rice:----------------- \u20B9 74', 'Jeera Rice:----------------- \u20B9 74', 'Veg Rice Manchurian:--- \u20B9 74', 'Gobi Manchurian:-------- \u20B9 74', 'Mushroom Fried Rice:--- \u20B9 74', 'Triple Fried Rice:--------- \u20B9 74', 'Veg Biryani:--------------- \u20B9 74', 'Mushroom Manchurian:- \u20B9 84', 'Paneer Manchurian:------ \u20B9 100'])">
+            <img src="Images/chinese.avif" alt="Image 5">
+            <p class="image-caption">Chinese</p>
+        </div>
+        <div class="image-container" data-message="South Indian Snacks" data-item-list="Dosa,Idli,Vada"
+            onclick="showItemList('South-Indian-Snacks', ['Idli Sambar(2 idli):----------------------- \u20B9 21', 'Vada Sambar:----------------------------- \u20B9 21', 'Ambade Sambar:------------------------- \u20B9 21', 'Dahi Vada:---------------------------------\u20B9 23', 'Moong Avalakki:------------------------- \u20B9 26', 'Kadle  Avalakki:---------------------------\u20B9 26', 'Upma  Avalakki:---------------------------\u20B9 26', 'Idli Sambar(3 idli):------------------------\u20B9 32', 'Idli Vada(Single):------------------------- \u20B9 32', 'Chapati Kurma:----------------------------\u20B9 35', 'Pav Bhaji(2 paav)*extra pav:------------\u20B9 37', 'Puri Bhaji:----------------------------------\u20B9 37', 'Pundi Gassi:--------------------------------\u20B9 37', 'Aloo Paratha:-------------------------------\u20B9 40', 'Vada Sambar(2 Vada):---------------------\u20B9 42', 'Pav Bhaji(2 paav):-------------------------\u20B9 42', 'Parota Kurma(2 no.)*extra parota:------\u20B9 42', 'Samosa:-------------------------------------\u20B9 42', 'Cutlet:---------------------------------------\u20B9 42', 'Ambade Samabar:-------------------------\u20B9 42', 'Dahi Vada(2 Vada):------------------------\u20B9 45'])">
+            <img src="Images/south.jpeg" alt="Image 6">
+            <p class="image-caption">South-Indian-Snacks</p>
+        </div>
+        <div class="image-container" data-message="Crunchy Snacks" data-item-list="Samosa,Kachori,Pakora"
+            onclick="showItemList('Snacks', ['Buns(1):----------------- \u20B9 16', 'Biscuit Rotti(1):-------- \u20B9 16', 'Veg Bonda(1):---------- \u20B9 16', 'Alu Bonda(1):---------- \u20B9 16', 'Chattambade(1):------- \u20B9 16', 'Goli Baje:--------------- \u20B9 25', 'Podi:--------------------- \u20B9 25', 'Mirchi Podi:------------ \u20B9 25', 'Buns(2):----------------- \u20B9 32', 'Biscuit Rotti(2):-------- \u20B9 32', 'Sanjeera:----------------- \u20B9 32', 'Veg Bonda:-------------- \u20B9 32', 'Alu Bonda:-------------- \u20B9 32', 'Chattambade:----------- \u20B9 32', 'Onion Pakoda:---------- \u20B9 37'])">
+            <img src="Images/sam.jpeg" alt="Image 7">
+            <p class="image-caption">Snacks</p>
+        </div>
+
+        <div class="image-container" data-message="Savory Dosas" data-item-list="Masala Dosa,Rava Dosa,Plain Dosa"
+            onclick="showItemList('Dosa', ['Plain Dosa:-------------------------- \u20B9 26', 'Uddina Dosa(Sada Dosa):--------- \u20B9 30', 'Neer Dosa:--------------------------- \u20B9 30', 'Masala Dosa:------------------------ \u20B9 40'])">
+            <img src="Images/dosaa.jpeg" alt="Image 8">
+            <p class="image-caption">Dosa</p>
+        </div>
+        <div class="image-container" data-message="Special Dosas" data-item-list="Paneer Dosa,Cheese Dosa,Onion Dosa"
+            onclick="showItemList('Special-Dosa', ['Mysuru Masala:----------- \u20B9 50', 'Paneer Masala:------------ \u20B9 50', 'Palak Masala:-------------- \u20B9 50', 'Mushroom Masala:-------- \u20B9 50', 'Open Masala:--------------- \u20B9 50', 'Rava Masala:--------------- \u20B9 50', 'Spring Masala:------------- \u20B9 50', 'Onion Rava Masala:------- \u20B9 50', 'Onion Utappa:-------------- \u20B9 42', 'Tomato Onion Utappa:---- \u20B9 50', 'Panner Uttapa:-------------- \u20B9 50', 'Tomato Omlete:------------- \u20B9 50', 'Gralic Masala:--------------- \u20B9 50', 'Schezwan Masala:---------- \u20B9 50', 'Palak Paneer:---------------- \u20B9 50', 'Set Dosa:--------------------- \u20B9 45'])">
+            <img src="Images/Special.jpg" alt="Image 9">
+            <p class="image-caption">Special-Dosa</p>
+        </div>
+        <div class="image-container" data-message="Sweet Indulgence" data-item-list="Gulab Jamun,Rasgulla,Jalebi"
+            onclick="showItemList('Sweets', ['Gulaab Jaamun(1):---- \u20B9 16', 'Gulaab Jamun(2):------ \u20B9 32', 'Sheera:------------------ \u20B9 35'])">
+            <img src="Images/sweets.webp" alt="Image 10">
+            <p class="image-caption">Sweets</p>
+        </div>
+        <div class="image-container" data-message="Flavorful Gravys"
+            onclick="showItemList('Gravys', ['Paneer Butter Masala:------------- \u20B9 80', 'Paneer Tikka Masala:-------------- \u20B9 80', 'Paneer Chingari:-------------------- \u20B9 80', 'Paneer Burji:------------------------ \u20B9 80', 'Paneer Kholapuri:------------------ \u20B9 80,', 'Shahi Paneer:------------------------ \u20B9 80', 'Paneer Navaratna Kurma:--------- \u20B9 80', 'Mushroom Makhanwala:---------- \u20B9 80', '*2 Paratha + Any Gravy Above:-- \u20B9 95', 'Extra Paratha:------------------------ \u20B9 10'])">
+            <img src="Images/gravys.webp" alt="Image 11">
+            <p class="image-caption">Gravys</p>
+        </div>
+        <div class="image-container" data-message="Hearty Meals & Pulav"
+            onclick="showItemList('Meals & Pulav', ['Veg Pulav:------ \u20B9 45', 'Meal:------------ \u20B9 50'])">
+            <img src="Images/meals.jpg" alt="Image 12">
+            <p class="image-caption">Meals & Pulav</p>
+        </div>
+
+        </div>
+    </section>
+
+
+
+
+    <!-- 
+    <div class="modal" id="imageModal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div id="modalContent">
+            <h2 id="modalCaption"></h2>
+            <p id="modalMessage"> </p>
+            <ul id="modalItemList"></ul>
+        </div>
+    </div> -->
+
+    <!-- <div id="itemModal" class="modal">
+        <span class="close" onclick="hideModal()">&times;</span>
+        <h2 id="modalTitle"></h2>
+        <ul id="itemList"></ul>
+    </div> -->
+
+    <!-- The modal -->
+    <div id="itemModal" class="modal">
+        <span class="close" onclick="hideModal()">&times;</span>
+        <h2 id="modalTitle"></h2>
+        <div class="separator"></div>
+        <ul id="itemList"></ul>
+    </div>
+
+
+
+
+
+
+    <!-- JQuery Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- Owl Carousel script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+    <!-- Light Gallery script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/js/lightgallery.min.js"></script>
+
+    <script src="./JS/script.js"></script>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <!-- <script>
+    $(document).ready(function () {
+        // Add a click event listener to each image container
+        $('#horizontal-scroll-container').on('click', '.image-container', function () {
+            // Get data from the clicked image
+            var imgCaption = $(this).find('.image-caption').text();
+            var imgMessage = $(this).data('message');
+            var itemList = $(this).data('item-list');
+    
+            // Update modal content
+            $('#modalCaption').text(imgCaption);
+            $('#modalMessage').text(imgMessage);
+    
+            // Update modal item list
+            var modalItemList = $('#modalItemList');
+            modalItemList.empty();
+            if (itemList && itemList.length > 0) {
+                var itemsArray = itemList.split(',').map(item => item.trim());
+                itemsArray.forEach(function (item) {
+                    var liElement = $('<li></li>').text(item); // Create a list item and set its text
+                    modalItemList.append(liElement); // Append the list item to the modal item list
+                });
+            }
+    
+            // Display the modal
+            $('#imageModal').css('display', 'block');
+        });
+    });
+    
+    // Function to close the modal
+    function closeModal() {
+        $('#imageModal').css('display', 'none');
+    }
+</script> -->
+    <!-- <script>
+    function redirectToPage(page) {
+        // Redirect to the specified HTML page
+        window.location.href = page;
+    }
+</script> -->
+
+
+    <script>
+
+        // Function to open the modal
+
+        function showItemList(title, items) {
+            $('body').addClass('modal-opened');
+            // Display the modal
+
+            const modal = document.getElementById('itemModal');
+            modal.style.display = 'block';
+
+            // Set the modal title
+            document.getElementById('modalTitle').textContent = title;
+
+            // Populate the item list
+            const itemList = document.getElementById('itemList');
+            itemList.innerHTML = '';
+            items.forEach(item => {
+                const node = document.createElement("li");
+                const textnode = document.createTextNode(item);
+                node.appendChild(textnode);
+                itemList.appendChild(node);
+            });
+        }
+
+        function hideModal() {
+            // Hide the modal
+            const modal = document.getElementById('itemModal');
+            modal.style.display = 'none';
+            $('body').removeClass('modal-opened');
+        }
+
+
+
+        // Add click event listeners or triggers as needed
+        $('#openModalButton').click(openModal);
+        $('#closeModalButton').click(closeModal);
+
+
+
+    </script>
+
+
+
+
+</body>
+
+</html>
